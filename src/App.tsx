@@ -5,7 +5,13 @@ import usePosts from "./hooks/usePosts";
 function App() {
 	const [posts] = usePosts();
 
-	return posts.map((post) => <PostCard />);
+	return (
+		<>
+			{posts.map((post) => (
+				<PostCard post={post} />
+			))}
+		</>
+	);
 }
 
 export default App;

@@ -13,3 +13,14 @@ CREATE TABLE posts (
   created_at timestamp with time zone default now() not null,
   path ltree not null
 );
+
+CREATE TABLE posts_content (
+  id bigint generated always as identity primary key,
+  user_id uuid references auth.users (id) not null,
+  post_id bigint references posts (id) not null,
+  title text,
+  content text,
+  created_at timestamp with time zone default now() not null
+);
+
+

@@ -6,9 +6,15 @@ function usePosts() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-      supabase.from('posts').select()
-      .then(({ data }) => setPosts(data || []));
-  });
+    supabase.from('posts').select(`
+      posts_content(
+        title
+      )
+    `)
+      .then(({ data }) => {
+        console.log(data);
+      });
+  }, []);
 
   return [posts];
 }
