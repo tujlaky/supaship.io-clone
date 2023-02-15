@@ -13,7 +13,7 @@ export function Card({ children, ...props }: CardProperties) {
 		<div
 			{...props}
 			className={clsx(
-				"bg-white p-5 rounded-sm drop-shadow-sm",
+				"bg-white rounded-sm drop-shadow-sm",
 				props.className,
 			)}
 		>
