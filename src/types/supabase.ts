@@ -34,6 +34,29 @@ export interface Database {
   }
   public: {
     Tables: {
+      post_contents: {
+        Row: {
+          content: string | null
+          created_at: string
+          post_id: number
+          title: string | null
+          user_id: string
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string
+          post_id: number
+          title?: string | null
+          user_id: string
+        }
+        Update: {
+          content?: string | null
+          created_at?: string
+          post_id?: number
+          title?: string | null
+          user_id?: string
+        }
+      }
       posts: {
         Row: {
           created_at: string
@@ -51,32 +74,6 @@ export interface Database {
           created_at?: string
           id?: never
           path?: string
-          user_id?: string
-        }
-      }
-      posts_content: {
-        Row: {
-          content: string | null
-          created_at: string
-          id: number
-          post_id: number
-          title: string | null
-          user_id: string
-        }
-        Insert: {
-          content?: string | null
-          created_at?: string
-          id?: never
-          post_id: number
-          title?: string | null
-          user_id: string
-        }
-        Update: {
-          content?: string | null
-          created_at?: string
-          id?: never
-          post_id?: number
-          title?: string | null
           user_id?: string
         }
       }

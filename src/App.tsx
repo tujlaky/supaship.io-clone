@@ -8,7 +8,7 @@ function App() {
 	return (
 		<>
 			{posts.map((post) => (
-				<PostCard post={post} />
+				<PostCard key={post.id} post={post} />
 			))}
 		</>
 	);

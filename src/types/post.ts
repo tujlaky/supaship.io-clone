@@ -1,7 +1,8 @@
-type Post = {
-  id: number;
-  title: string,
-  content: string
-};
+import { Database } from "./supabase";
 
-export default Post;
+export type Post = Database['public']['Tables']['posts']['Row'];
+export type PostContent = Database['public']['Tables']['post_contents']['Row'];
+
+export type PostWithContent = Post & {
+  content: PostContent
+};
